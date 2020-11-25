@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbda4dd38ca20f62457fed3c81927467",
+    "content-hash": "e02dffb3785e7a9ea3c364595e7bdea8",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -61,6 +61,24 @@
             "type": "bower-asset"
         },
         {
+            "name": "bower-asset/select2",
+            "version": "4.0.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ivaynberg/select2.git",
+                "reference": "45f2b83ceed5231afa7b3d5b12b58ad335edd82e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ivaynberg/select2/zipball/45f2b83ceed5231afa7b3d5b12b58ad335edd82e",
+                "reference": "45f2b83ceed5231afa7b3d5b12b58ad335edd82e"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
             "name": "bower-asset/yii2-pjax",
             "version": "2.0.7.1",
             "source": {
@@ -80,6 +98,58 @@
             "license": [
                 "MIT"
             ]
+        },
+        {
+            "name": "buibr/yii2-select2-bs4",
+            "version": "v1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/buibr/yii2-select2-bs4.git",
+                "reference": "6f8022d6cc5d4b853e2cdf190e1b4cfd67edce76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/buibr/yii2-select2-bs4/zipball/6f8022d6cc5d4b853e2cdf190e1b4cfd67edce76",
+                "reference": "6f8022d6cc5d4b853e2cdf190e1b4cfd67edce76",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/select2": ">=4.0.0",
+                "conquer/helpers": ">=2.0.7",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": ">=2.0.6"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "buibr\\select2\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Borodulin",
+                    "email": "borodulin@gmail.com"
+                },
+                {
+                    "name": "Burhan Ibrahimi",
+                    "email": "burhan@wflux.pro",
+                    "homepage": "http://www.wflux.pro/"
+                }
+            ],
+            "description": "Yii2 Select2 widget for bootstrap 4",
+            "homepage": "https://github.com/borodulin/yii2-select2",
+            "keywords": [
+                "bootstrap4",
+                "extension",
+                "select2",
+                "widget",
+                "yii2"
+            ],
+            "time": "2019-03-12T10:07:28+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -140,6 +210,55 @@
                 "markdown-extra"
             ],
             "time": "2018-03-26T11:24:36+00:00"
+        },
+        {
+            "name": "conquer/helpers",
+            "version": "2.0.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/borodulin/yii2-helpers.git",
+                "reference": "fce7205b0e7f9d2673ddb21702ad858287ab8fa3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/borodulin/yii2-helpers/zipball/fce7205b0e7f9d2673ddb21702ad858287ab8fa3",
+                "reference": "fce7205b0e7f9d2673ddb21702ad858287ab8fa3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": ">=2.0.13"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.13.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "conquer\\helpers\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Borodulin",
+                    "email": "borodulin@gmail.com"
+                }
+            ],
+            "description": "Yii2 helpers",
+            "homepage": "https://github.com/borodulin/yii2-helpers",
+            "keywords": [
+                "extension",
+                "helpers",
+                "widget",
+                "yii2"
+            ],
+            "time": "2018-03-14T04:09:25+00:00"
         },
         {
             "name": "doctrine/lexer",

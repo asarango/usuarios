@@ -3,16 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\AccPerfil;
-use app\models\AccPerfilSearch;
+use app\models\AccUsuario;
+use app\models\AccUsuarioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * AccPerfilController implements the CRUD actions for AccPerfil model.
+ * AccUsuarioController implements the CRUD actions for AccUsuario model.
  */
-class AccPerfilController extends Controller
+class AccUsuarioController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class AccPerfilController extends Controller
     }
 
     /**
-     * Lists all AccPerfil models.
+     * Lists all AccUsuario models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new AccPerfilSearch();
+        $searchModel = new AccUsuarioSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,8 +45,8 @@ class AccPerfilController extends Controller
     }
 
     /**
-     * Displays a single AccPerfil model.
-     * @param integer $id
+     * Displays a single AccUsuario model.
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -58,47 +58,53 @@ class AccPerfilController extends Controller
     }
 
     /**
-     * Creates a new AccPerfil model.
+     * Creates a new AccUsuario model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new AccPerfil();
+        $model = new AccUsuario();
+        
+        $modelProfiles = \app\models\AccPerfil::find()->all();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['/acc-permiso/index', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->usuario]);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'modelProfiles' => $modelProfiles
         ]);
     }
 
     /**
-     * Updates an existing AccPerfil model.
+     * Updates an existing AccUsuario model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        
+         $modelProfiles = \app\models\AccPerfil::find()->all();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect(['view', 'id' => $model->usuario]);
         }
 
         return $this->render('update', [
             'model' => $model,
+            'modelProfiles' => $modelProfiles
         ]);
     }
 
     /**
-     * Deletes an existing AccPerfil model.
+     * Deletes an existing AccUsuario model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -110,15 +116,15 @@ class AccPerfilController extends Controller
     }
 
     /**
-     * Finds the AccPerfil model based on its primary key value.
+     * Finds the AccUsuario model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return AccPerfil the loaded model
+     * @param string $id
+     * @return AccUsuario the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = AccPerfil::findOne($id)) !== null) {
+        if (($model = AccUsuario::findOne($id)) !== null) {
             return $model;
         }
 
